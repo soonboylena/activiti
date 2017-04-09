@@ -17,7 +17,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class processTest {
 
-    private String filename = "/home/sunb/IdeaProjects/activiti/src/main/java/com/sunb/bpmn/process.bpmn";
+    private String filename = "/home/sunb/IdeaProjects/activiti/src/main/java/com/sunb/bpmn/process.bpmn20.xml";
 
     @Rule
     public ActivitiRule activitiRule = new ActivitiRule();
@@ -25,7 +25,7 @@ public class processTest {
     @Test
     public void startProcess() throws Exception {
         RepositoryService repositoryService = activitiRule.getRepositoryService();
-        repositoryService.createDeployment().addInputStream("process.bpmn20.xml", new FileInputStream(filename)).deploy();
+        repositoryService.createDeployment().addInputStream("leave.bpmn20.xml", new FileInputStream(filename)).deploy();
 
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         HashMap<String, Object> map = new HashMap<String, Object>() {{

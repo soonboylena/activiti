@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/processdef" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1491721149548" name="" targetNamespace="http://www.activiti.org/processdef" typeLanguage="http://www.w3.org/2001/XMLSchema">
   <process id="leave" isClosed="false" isExecutable="true" name="leave" processType="None">
-    <startEvent id="start" name="start"/>
     <userTask activiti:assignee="leader" activiti:exclusive="true" id="deptLeaveAudit" name="领导审批"/>
-    <sequenceFlow id="sid-26F14D4F-3F87-47D0-BC41-CD011C8DC4B9" sourceRef="start" targetRef="deptLeaveAudit"/>
     <userTask activiti:assignee="hr" activiti:exclusive="true" id="hrAudit" name="人事审批"/>
     <sequenceFlow id="sid-E339EC4D-671B-4825-A85D-66560DEEA757" sourceRef="deptLeaveAudit" targetRef="hrAudit"/>
     <userTask activiti:assignee="${proposer}" activiti:exclusive="true" id="reportBack" name="销假"/>
@@ -11,16 +9,21 @@
     <endEvent id="sid-11D78A5E-216E-413F-9C00-089D03B1D756" name="end"/>
     <sequenceFlow id="sid-C27CF53E-C9F3-405C-B035-FD3C4FC2007A" sourceRef="reportBack" targetRef="sid-11D78A5E-216E-413F-9C00-089D03B1D756"/>
   </process>
+  <collaboration id="COLLABORATION_1" isClosed="false">
+    <participant id="_2" name="请假流程" processRef="myProcess_1">
+      <participantMultiplicity maximum="1" minimum="0"/>
+    </participant>
+  </collaboration>
+  <process id="myProcess_1" isClosed="false" isExecutable="true" processType="None">
+    <laneSet>
+      <lane id="_3" name="员工"/>
+      <lane id="_4" name="Lane"/>
+    </laneSet>
+  </process>
   <bpmndi:BPMNDiagram documentation="background=#3C3F41;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
-    <bpmndi:BPMNPlane bpmnElement="leave">
-      <bpmndi:BPMNShape bpmnElement="start" id="Shape-start">
-        <omgdc:Bounds height="32.0" width="32.0" x="105.0" y="75.0"/>
-        <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
+    <bpmndi:BPMNPlane bpmnElement="COLLABORATION_1">
       <bpmndi:BPMNShape bpmnElement="deptLeaveAudit" id="Shape-deptLeaveAudit">
-        <omgdc:Bounds height="80.0" width="100.0" x="180.0" y="45.0"/>
+        <omgdc:Bounds height="80.0" width="100.0" x="195.0" y="440.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
@@ -43,6 +46,24 @@
           <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_2" id="Shape-_2" isExpanded="true" isHorizontal="true">
+        <omgdc:Bounds height="400.0" width="1494.0" x="0.0" y="210.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="400.0" width="1494.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_3" id="Shape-_3" isExpanded="true" isHorizontal="true">
+        <omgdc:Bounds height="200.0" width="1469.0" x="26.0" y="210.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="200.0" width="1469.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_4" id="Shape-_4" isExpanded="true" isHorizontal="true">
+        <omgdc:Bounds height="200.0" width="1469.0" x="26.0" y="410.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="200.0" width="1469.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="sid-A258B8B4-5965-48D4-BBDD-6B420A67E4FE" id="BPMNEdge_sid-A258B8B4-5965-48D4-BBDD-6B420A67E4FE" sourceElement="hrAudit" targetElement="reportBack">
         <omgdi:waypoint x="425.0" y="85.0"/>
         <omgdi:waypoint x="470.0" y="85.0"/>
@@ -58,17 +79,8 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="sid-E339EC4D-671B-4825-A85D-66560DEEA757" id="BPMNEdge_sid-E339EC4D-671B-4825-A85D-66560DEEA757" sourceElement="deptLeaveAudit" targetElement="hrAudit">
-        <omgdi:waypoint x="280.0" y="85.0"/>
+        <omgdi:waypoint x="295.0" y="480.0"/>
         <omgdi:waypoint x="325.0" y="85.0"/>
-        <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="sid-26F14D4F-3F87-47D0-BC41-CD011C8DC4B9" id="BPMNEdge_sid-26F14D4F-3F87-47D0-BC41-CD011C8DC4B9" sourceElement="start" targetElement="deptLeaveAudit">
-        <omgdi:waypoint x="136.9687194226713" y="90.0"/>
-        <omgdi:waypoint x="158.0" y="90.0"/>
-        <omgdi:waypoint x="158.0" y="85.0"/>
-        <omgdi:waypoint x="180.0" y="90.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
         </bpmndi:BPMNLabel>
