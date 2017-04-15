@@ -1,18 +1,16 @@
 package com.sunb.config;
 
-import org.activiti.engine.ProcessEngineConfiguration;
-import org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by sunb on 17-4-15.
  */
+@Configuration
 public class ActivitiConfig {
 
     @Bean
-    public ProcessEngineConfiguration configuration() {
-        StandaloneProcessEngineConfiguration configuration = new StandaloneProcessEngineConfiguration();
-        configuration.setDatabaseType("mysql");
-        return configuration;
+    public ProcessEngine configuration() {
+        return ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration().buildProcessEngine();
     }
 }
