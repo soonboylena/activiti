@@ -1,5 +1,6 @@
 package com.sunb.web;
 
+import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +15,13 @@ public class ProcessController {
     @Autowired
     private ProcessEngineConfiguration repositoryService;
 
+    @Autowired
+    private ProcessEngine engine;
+
     @GetMapping("postList")
-    public boolean listProcess() {
-        return repositoryService == null;
+    public String listProcess() {
+        System.out.println(engine);
+        return repositoryService.getProcessEngineName();
     }
 
 }

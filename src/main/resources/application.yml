@@ -6,7 +6,6 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/activiti?characterEncoding=UTF-8
     username: root
-    password: sunb
+    password: sunbo
     name: activiti
     driver-class-name: com.mysql.jdbc.Driver
-
