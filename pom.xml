@@ -32,9 +32,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<scope>runtime</scope>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<scope>runtime</scope>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,25 +53,27 @@
         <!--<version>5.22.0</version>-->
         <!--</dependency>-->
         <!-- https://mvnrepository.com/artifact/org.activiti/spring-boot-starter-basic -->
+        <!-- https://mvnrepository.com/artifact/org.activiti/activiti-spring-boot-starter-basic -->
         <dependency>
             <groupId>org.activiti</groupId>
-            <artifactId>spring-boot-starter-basic</artifactId>
-            <version>5.17.0</version>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <version>5.22.0</version>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.194</version>
-        </dependency>-->
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.34</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-            <!--<version>8.0.15</version>-->
+        <!--<groupId>org.apache.tomcat</groupId>-->
+        <!--<artifactId>tomcat-jdbc</artifactId>-->
+        <!--<version>8.0.15</version>-->
         <!--</dependency>-->
     </dependencies>
 
@@ -86,31 +88,31 @@
 
     <!-- Maven仓库定义 -->
     <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>central</id>-->
-            <!--<url>http://maven.oschina.net/content/groups/public/</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>nexus-osc-thirdparty</id>-->
-            <!--<url>http://maven.oschina.net/content/repositories/thirdparty/</url>-->
-        <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>central</id>-->
+    <!--<url>http://maven.oschina.net/content/groups/public/</url>-->
+    <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>nexus-osc-thirdparty</id>-->
+    <!--<url>http://maven.oschina.net/content/repositories/thirdparty/</url>-->
+    <!--</repository>-->
 
-        <!--&lt;!&ndash; Activiti的仓库 &ndash;&gt;-->
-        <!--<repository>-->
-            <!--<id>Activiti</id>-->
-            <!--<url>https://maven.alfresco.com/nexus/content/repositories/activiti</url>-->
-        <!--</repository>-->
+    <!--&lt;!&ndash; Activiti的仓库 &ndash;&gt;-->
+    <!--<repository>-->
+    <!--<id>Activiti</id>-->
+    <!--<url>https://maven.alfresco.com/nexus/content/repositories/activiti</url>-->
+    <!--</repository>-->
 
-        <!--<repository>-->
-            <!--<id>Alfresco</id>-->
-            <!--<url>https://maven.alfresco.com/nexus/content/repositories/public</url>-->
-        <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>Alfresco</id>-->
+    <!--<url>https://maven.alfresco.com/nexus/content/repositories/public</url>-->
+    <!--</repository>-->
 
-        <!--&lt;!&ndash; Mulesoft的仓库 &ndash;&gt;-->
-        <!--<repository>-->
-            <!--<id>Mulesoft</id>-->
-            <!--<url>https://repository-master.mulesoft.org/nexus/content/groups/public/</url>-->
-        <!--</repository>-->
+    <!--&lt;!&ndash; Mulesoft的仓库 &ndash;&gt;-->
+    <!--<repository>-->
+    <!--<id>Mulesoft</id>-->
+    <!--<url>https://repository-master.mulesoft.org/nexus/content/groups/public/</url>-->
+    <!--</repository>-->
     <!--</repositories>-->
 
 </project>

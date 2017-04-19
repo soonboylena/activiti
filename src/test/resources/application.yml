@@ -1,5 +1,5 @@
-activiti
-  databaseType: mysql
-  databaseSchemaUpdate: true
-  jobExecutorActivate: false
-  history: full
+spring:
+  activiti:
+    database-schema: activiti
+    database-schema-update: true
+    history-level: full
