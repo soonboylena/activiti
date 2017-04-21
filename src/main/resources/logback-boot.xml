@@ -12,8 +12,7 @@
                 <pattern>${PATTERN}</pattern>
             </encoder>
         </appender>
-        <logger name="com.sunb" level="debug"/>
-        <root level="info">
+        <root level="debug">
             <appender-ref ref="CONSOLE" />
         </root>
     </springProfile>
