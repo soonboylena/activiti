@@ -9,3 +9,9 @@ spring:
     password: sunbo
     name: activiti
     driver-class-name: com.mysql.jdbc.Driver
+logging:
+  pattern:
+    level: debug
+
+
+
