@@ -3,11 +3,11 @@ spring:
     database-schema: activiti
     database-schema-update: true
     history-level: full
+    mail-server-use-ssl: false
   datasource:
     url: jdbc:mysql://localhost:3306/activiti?characterEncoding=UTF-8
     username: root
-    password: sunbo
+    password: sunb
     name: activiti
     driver-class-name: com.mysql.jdbc.Driver
-
 
