@@ -9,6 +9,6 @@ spring:
     history-level: full
     mail-server-use-ssl: false
   profiles:
-    active: win
+    active: dev
 
 

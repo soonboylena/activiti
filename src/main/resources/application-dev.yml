@@ -5,4 +5,20 @@ spring:
     password: sunb
     name: activiti
     driver-class-name: com.mysql.jdbc.Driver
+logging:
+  level:
+    ROOT: warn
+    com.sunb: debug
+    org.springframework.security: debug
+    org.springframework.boot.actuate: debug
+management:
+  security:
+    enabled: false
+#security:
+#  user:
+#    name: sunbo
+#    password: sunbo
+
+
+
 
